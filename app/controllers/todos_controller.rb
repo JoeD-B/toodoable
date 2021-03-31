@@ -10,11 +10,12 @@ class TodosController < ApplicationController
     end
     
     def create
-        todo = Todo.new(todo_params)
-        if todo.save
+        @todo = Todo.new(todo_params)
+        if @todo.save
             redirect_to todo_path(todo)
         else
-            redirect_to new_todo_path
+            @errors = @todo.errors.full_messages
+            render :new
         end             
         
     end
