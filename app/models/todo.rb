@@ -1,9 +1,9 @@
 class Todo < ApplicationRecord
     
     has_many :states
-    has_many :users, through: :state
     
     validates_presence_of :name
 
-    
+    accepts_nested_attributes_for :states
+
 end

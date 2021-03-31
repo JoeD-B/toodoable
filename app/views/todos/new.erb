@@ -5,7 +5,12 @@
 <%end%>
 
 <%=form_for(@todo) do |f|%>
-  <%=f.label("Todo Name:") %>
+  <%=f.label("Todo:") %>
   <%=f.text_field(:name) %>
+
+  <%=f.fields_for :states do |m| %>
+    <%=m.label "Priority:"%>
+    <%=m.number_field :priority%>
+  <%end%>
   <%=f.submit "Submit"%>
-<%end%> 
+<%end%>

@@ -1,0 +1,7 @@
+<p>Priority Level</p>
+
+<%= form_for(@state) do |s|%>
+    <%=s.label "Priority"%>
+    <%=s.number_field(:priority)%>
+    <%=s.submit%>
+<%end%>

@@ -7,10 +7,12 @@ class TodosController < ApplicationController
     end
     def new
         @todo = Todo.new
+        @todo.states.build
     end
     
     def create
         @todo = Todo.new(todo_params)
+        binding.pry
         if @todo.save
             redirect_to todo_path(@todo)
         else
