@@ -1,1 +1,16 @@
 <p><%= @todo.name%></p>
+
+<%=link_to "Edit",  edit_todo_path(@todo)%>
+
+
+<h3>Form_for</h3>
+<%=form_for(@todo, method: :delete) do |f|%>
+  <%=f.submit "Delete"%>
+<%end%>
+<h3>button_to</h3>
+<%=button_to("Delete", @todo, method: :delete, data: { confirm: "Really?" }) %>
+
+
+<h3>link_to</h3>
+
+<%=link_to("Delete", @todo, method: :delete, data: { confirm: "Really?" }) %>

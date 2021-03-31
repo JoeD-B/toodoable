@@ -34,7 +34,7 @@ class TodosController < ApplicationController
     def destroy
         todo = Todo.find_by(id: params[:id])
         todo.delete
-        redirect_to items_path
+        redirect_to todos_path
     end
     
     private
