@@ -10,8 +10,13 @@ class TodosController < ApplicationController
     end
     
     def create
-        todo = Todo.create(todo_params)
-        redirect_to todo_path(todo)
+        todo = Todo.new(todo_params)
+        if todo.save
+            redirect_to todo_path(todo)
+        else
+            redirect_to new_todo_path
+        end             
+        
     end
     
     def edit
@@ -34,6 +39,6 @@ class TodosController < ApplicationController
     private
 
         def todo_params
-        params.require(:todo)
+        params.require(:todo).permit(:name)
         end
 end
