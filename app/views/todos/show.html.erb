@@ -1,12 +1,11 @@
 
 <p><%= @todo.content%></p>
+<p><%= @todo.states.priority%></p>
 
-<p><%= @todo.states%></p>
 
 
-<% @todo.states do |s|%>
-    <%s.priority%>
-<%end%>
+
+
 <%=link_to "Edit",  edit_todo_path(@todo)%>
 
 <%=button_to("Delete", @todo, method: :delete, data: { confirm: "Really?" }) %>

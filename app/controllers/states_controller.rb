@@ -14,7 +14,7 @@ class StatesController < ApplicationController
     
     def create
         @state = State.create(state_params)
-    
+        binding.pry
         redirect_to todos_path
         # if @state.save
         #     redirect_to todo_path(@todo)

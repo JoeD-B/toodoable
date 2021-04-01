@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_01_022222) do
+ActiveRecord::Schema.define(version: 2021_04_01_181458) do
 
   create_table "states", force: :cascade do |t|
     t.string "priority"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "todo_id"
+    t.integer "user_id"
   end
 
   create_table "todos", force: :cascade do |t|

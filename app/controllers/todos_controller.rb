@@ -8,6 +8,7 @@ class TodosController < ApplicationController
     def new
         @todo = Todo.new
         @todo.states.build 
+        
     end
     
     def create
