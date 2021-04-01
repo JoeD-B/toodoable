@@ -7,12 +7,14 @@ class TodosController < ApplicationController
     end
     def new
         @todo = Todo.new
-        @todo.states.build
     end
     
     def create
         @todo = Todo.new(todo_params)
+<<<<<<< HEAD
        
+=======
+>>>>>>> parent of 284d5e7... added nested for for priority state within todo. still cannot display statepriority on page
         if @todo.save
             redirect_to todo_path(@todo)
         else
