@@ -7,6 +7,7 @@ class Todo < ApplicationRecord
 
 <<<<<<< HEAD
     accepts_nested_attributes_for :states
+<<<<<<< HEAD
     
     def states_attributes=(attrs)
         attrs.values.each do |hash|
@@ -16,4 +17,7 @@ class Todo < ApplicationRecord
 =======
     
 >>>>>>> parent of 284d5e7... added nested for for priority state within todo. still cannot display statepriority on page
+=======
+
+>>>>>>> parent of a504bbb... db is broken
 end

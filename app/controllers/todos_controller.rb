@@ -12,9 +12,13 @@ class TodosController < ApplicationController
     def create
         @todo = Todo.new(todo_params)
 <<<<<<< HEAD
+<<<<<<< HEAD
        
 =======
 >>>>>>> parent of 284d5e7... added nested for for priority state within todo. still cannot display statepriority on page
+=======
+        binding.pry
+>>>>>>> parent of a504bbb... db is broken
         if @todo.save
             redirect_to todo_path(@todo)
         else
@@ -44,6 +48,6 @@ class TodosController < ApplicationController
     private
 
         def todo_params
-        params.require(:todo).permit(:name, states_attributes: [:priority])
+        params.require(:todo).permit(:name)
         end
 end

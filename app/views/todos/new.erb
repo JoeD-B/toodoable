@@ -9,9 +9,9 @@
   <%=f.text_field(:name) %>
 <<<<<<< HEAD
 
-  <%=f.fields_for :state do |s| %>
-    <%=s.label "Priority:"%>
-    <%=s.text_field :priority%>
+  <%=f.fields_for :states do |m| %>
+    <%=m.label "Priority:"%>
+    <%=m.number_field :priority%>
   <%end%>
 =======
 >>>>>>> parent of 284d5e7... added nested for for priority state within todo. still cannot display statepriority on page
