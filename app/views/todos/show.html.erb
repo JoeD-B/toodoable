@@ -2,9 +2,8 @@
 
 <p><%= @todo.name%></p>
 
-<% @todo.states.each do |s|%>
-    <li><%=s.priority%></li>
-<%end%>
+<li><%=@todo.priority%></li>
+
 
 <%=link_to "Edit",  edit_todo_path(@todo)%>
 

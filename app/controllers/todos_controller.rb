@@ -12,7 +12,7 @@ class TodosController < ApplicationController
     
     def create
         @todo = Todo.new(todo_params)
-        binding.pry
+       
         if @todo.save
             redirect_to todo_path(@todo)
         else
@@ -42,6 +42,6 @@ class TodosController < ApplicationController
     private
 
         def todo_params
-        params.require(:todo).permit(:name)
+        params.require(:todo).permit(:name, states_attributes: [:priority])
         end
 end

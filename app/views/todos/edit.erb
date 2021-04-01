@@ -8,7 +8,7 @@
 
   <%=f.fields_for :state do |s| %>
     <%=s.label "Priority:"%>
-    <%=s.number_field :priority%>
+    <%=s.text_field :priority%>
   <%end%>
   <%=f.submit "Submit"%>
 <%end%>
