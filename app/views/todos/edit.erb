@@ -1,13 +1,12 @@
 <%=form_for(@todo) do |f|%>
   <%=f.label("Todo Name:") %>
-  <%=f.text_field(:name) %>
-<<<<<<< HEAD
+  <%=f.text_field(:content) %>
+
 
   <%=f.fields_for :state do |s| %>
     <%=s.label "Priority:"%>
-    <%=s.number_field :priority%>
+    <%=s.text_field :priority%>
   <%end%>
-=======
->>>>>>> parent of 284d5e7... added nested for for priority state within todo. still cannot display statepriority on page
+
   <%=f.submit "Submit"%>
 <%end%>
