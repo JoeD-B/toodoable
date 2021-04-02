@@ -3,6 +3,7 @@ class Todo < ApplicationRecord
     
     accepts_nested_attributes_for :states
     validates_presence_of :content
-    
+    has_many :users, through: :states
 
+   
 end

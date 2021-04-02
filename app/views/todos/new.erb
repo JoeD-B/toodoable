@@ -9,9 +9,10 @@
   <%=f.text_field(:content) %>
 
 
-  <%=f.fields_for :states do |m| %>
-      <%=m.label "Priority:"%>
-      <%=m.text_field :priority%>
+  <%=f.fields_for :states do |s| %>
+      <%=s.label "Priority:"%>
+      <%=s.text_field :priority%>
+      <%=s.hidden_field :user_id, value: current_user.id%>
   <%end%>
 
   <%=f.submit "Submit"%>

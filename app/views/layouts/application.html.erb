@@ -8,14 +8,12 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
+  <h1>Priorities</h1>
   <body>
     <%if current_user %>
-    <%=link_to "All todos", todos_path %>
+    
     <%=link_to "New todo", new_todo_path %>
-    <%=link_to "New state", new_state_path %>
-    <%=link_to "All states", states_path %>
-    <%=link_to "My todos", user_todos_path(current_user) %>
+    <%=link_to "My todos", todos_path(current_user) %>
     <%= button_to "Log Out", logout_path, method: :post %>
     <%else%>
       <%= link_to "Log In", login_path %>

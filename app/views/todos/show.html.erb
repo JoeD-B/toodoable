@@ -1,7 +1,9 @@
 
 <p><%= @todo.content%></p>
-<p><%= @todo.states.priority%></p>
 
+<% @todo.states.each do |s|%>
+    <li><%= s.priority%></li>
+<%end%>
 
 
 

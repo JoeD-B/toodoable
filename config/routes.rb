@@ -2,9 +2,13 @@ Rails.application.routes.draw do
   resources :users, except: [:new, :create] do
     resources(:todos)
   end
+
+  resources(:todos) do
+    resources :states
+  end
   
   resources :states
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  
   
   #get '/todos', to: "todos#index"
   #get '/todos/:id', to: "todos#show"
@@ -16,4 +20,6 @@ Rails.application.routes.draw do
   get '/login', to: "sessions#new", as: "login"
   post '/login', to: "sessions#create"
   post '/logout', to: "sessions#destroy"
+ 
+  get "/auth/facebook/callback", to: "sessions#create_with_fb"
 end

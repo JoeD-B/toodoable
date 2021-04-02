@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+  
+
     def new
       @user = User.new
     end
@@ -8,7 +10,7 @@ class UsersController < ApplicationController
       @user = User.new(user_params)
       if @user.save
         session[:user_id] = @user.id
-        redirect_to user_todos_path(@user)
+        redirect_to todos_path(@user)
       else
         @errors = @user.errors.full_messages
         render :new

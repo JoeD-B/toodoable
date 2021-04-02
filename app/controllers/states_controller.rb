@@ -13,16 +13,16 @@ class StatesController < ApplicationController
     end
     
     def create
-        @state = State.create(state_params)
-        binding.pry
-        redirect_to todos_path
-        # if @state.save
-        #     redirect_to todo_path(@todo)
-        # else
-        #   # redirect_to new_todo_path
-        #   @errors = @todo.errors.full_messages
-        #   render :new
-        # end
+      @state = State.create(state_params)
+      @state.user = current_user
+      binding.pry
+      if params[:todo_id]
+        @state.todo_id = params[:todo_id]
+      end
+      @state.save
+      binding.pry
+      redirect_to todos_path
+        
     end
     
     
