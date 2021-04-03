@@ -18,9 +18,9 @@ class SessionsController < ApplicationController
       end
     end
   
-    def create_with_fb
+    def create_with_google
       
-      user = User.find_or_create_by(username: fb_auth['info']['email']) do |u|
+      user = User.find_or_create_by(username: google_auth['info']['email']) do |u|
         u.password = 'password'
       end
       if user.save
@@ -38,7 +38,7 @@ class SessionsController < ApplicationController
   
     private
   
-    def fb_auth
+    def google_auth
        self.request.env['omniauth.auth']
     end
   

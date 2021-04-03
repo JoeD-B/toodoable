@@ -1,7 +1,13 @@
-<h1>All Doables</h1>
+<h1>All <%=current_user.username%>'s Doables</h1>
 
+<h3>Search Your Todos</h3>
+
+<%= form_tag todos_path, method: :get do %>
+  <%=text_field_tag :content %>
+  <%=submit_tag "Search"%>
+<%end%>
 
 <%@todos.each do |todo| %>
-    <li><%=todo.content%><%=todo.priority%></li>
+    <li><%=link_to todo.content, todo_path(todo)%></li>
 <%end%>
 

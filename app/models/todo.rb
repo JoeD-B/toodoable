@@ -5,5 +5,7 @@ class Todo < ApplicationRecord
     validates_presence_of :content
     has_many :users, through: :states
 
+    scope :content_search, ->(content) {self.where("content = ?", content)}
+
    
 end

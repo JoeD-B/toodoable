@@ -9,8 +9,9 @@ gem 'rails', '~> 6.1.3'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.4'
 gem 'dotenv-rails'
+gem 'omniauth-google-oauth2'
 gem 'omniauth'
-gem 'omniauth-facebook'
+gem "omniauth-rails_csrf_protection"
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 # Use SCSS for stylesheets

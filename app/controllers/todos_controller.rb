@@ -1,12 +1,21 @@
 class TodosController < ApplicationController
   
     before_action(:set_todo, except: [:index, :new, :create])
-    #before_action(:require_login)
+    before_action(:require_login)
 
     layout "application"
     
     def index
+        
         @todos = Todo.all
+            
+            binding.pry
+            
+            if params[:content]
+              @todos = Todo.content_search(params[:content])
+            end
+
+        
     end
     def show
         @todo = Todo.find_by(id: params[:id])
@@ -25,7 +34,7 @@ class TodosController < ApplicationController
         
 
         if @todo.save
-            binding.pry
+            
             redirect_to todo_path(@todo)
         else
             @errors = @todo.errors.full_messages

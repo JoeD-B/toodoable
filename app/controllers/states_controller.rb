@@ -1,4 +1,6 @@
 class StatesController < ApplicationController
+    
+    before_action(:require_login)
     def index
         if params[:quantity]
           @states = State.quantity_search(params[:quantity])
@@ -15,12 +17,12 @@ class StatesController < ApplicationController
     def create
       @state = State.create(state_params)
       @state.user = current_user
-      binding.pry
+      
       if params[:todo_id]
         @state.todo_id = params[:todo_id]
       end
       @state.save
-      binding.pry
+      
       redirect_to todos_path
         
     end
@@ -30,7 +32,7 @@ class StatesController < ApplicationController
     private
     
       def state_params
-        params.require(:state).permit(:priority, :todo_id)
+        params.require(:state).permit(:priority, :todo_id, :user_id)
       end
     
 end
